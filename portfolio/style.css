@@ -352,6 +352,42 @@ footer ul li a{
     margin-top:2rem;
 }
 
+
+.input-field {
+    width: 50%;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    font-size:10px;
+}
+
+.input-field-msg {
+    width: 50%;
+    height: 100px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+    resize: none;
+    outline: none;
+}
+
+.input {
+    margin-bottom: 15px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
 @media(max-width:1280px){
     header{
         padding: 1rem 2rem;
