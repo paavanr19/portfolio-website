@@ -72,16 +72,16 @@ li a:hover::before {
     border:none;
     font-weight:500;
     font-size:1rem;
-    color:white;
+    color:black;
     cursor:pointer;
     text-wrap: nowrap;
     transition: 0.3s ease-in-out;
-    background:linear-gradient(to right, rgb(0,157,255), rgb(255,0,255));
+    background:white;
 }
 
 .visit-btn:hover {
     transform: scale(1.03);
-    background:linear-gradient(to right, rgb(255,0,255), rgb(0, 157, 255));
+    background:#4e6d66;
 }
 
 #menu-icon{
@@ -100,6 +100,7 @@ section {
     display:flex;
     align-items:center;
     justify-content:center;
+    background-color: #F2EFE7;
 }
 
 .about .about-container {
@@ -135,7 +136,7 @@ section {
 }
 
 .info-box span{
-    background:linear-gradient(to right, rgb(255,0,255), rgb(0, 157, 255));
+    background:#4e6d66;
     background-clip:text;
     color:transparent;
     font-size:2rem;
@@ -156,7 +157,7 @@ section {
 }
 
 .btn:hover{
-    background-color:black;
+    background-color:#4e6d66;
     color:white;
 }
 
@@ -187,6 +188,12 @@ socials {
     align-items:center;
     justify-content:center;
     gap:5rem;
+    
+}
+
+.experience {
+    /*background-color:#C8DFDB;*/
+    background-color: #85aa9b;
 }
 
 .experience img {
@@ -201,7 +208,7 @@ socials {
 }
 
 .grid-card {
-    border: 2px solid black;
+    border: 2px solid #18392B;
     border-radius: 3rem;
     padding: 2rem;
     display: flex;
@@ -210,11 +217,12 @@ socials {
     justify-content: center;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    background-color:#F2EFE7;
 }
  
 .grid-card:hover{
     transform:scale(1.02);
-    background-color:black;
+    background-color:#18392B;
     color:white;
 }
 
@@ -227,7 +235,7 @@ socials {
 .grid-card span{
     font-size:1.5rem;
     font-weight:500;
-    background:linear-gradient(to right, rgb(0,157,255), rgb(255,0,255));
+    background:#85aa9b;
     background-clip:text;
     color:transparent;
 }
@@ -241,9 +249,11 @@ socials {
 }
 
 ::-webkit-scrollbar-thumb{
-    background:linear-gradient(to right, #009dff, #ff00ff);
+    background:#18392b;
 }
-
+.projects {
+    background-color:#F2EFE7;
+}
 .projects-grid {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -261,6 +271,7 @@ socials {
     border-radius:3rem;
     cursor:pointer;
     transition:0.3s ease-in-out;
+    
 }
 
 .projects-card:hover{
@@ -334,6 +345,7 @@ footer {
     gap:1rem;
     align-items:center;
     justify-content:center;
+    background-color:#F2EFE7;
 }
 
 footer ul {
@@ -385,6 +397,10 @@ footer ul li a{
 a {
     color: inherit;
     text-decoration: none;
+}
+
+.contact {
+    background-color: #85aa9b;
 }
 
 
