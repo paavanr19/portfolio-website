@@ -6,6 +6,7 @@
     <title>Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
 
@@ -17,10 +18,10 @@
             <a href="#about">About</a>
         </li>
         <li>
-            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
         </li>
         <li>
-            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
         </li>
         <li>
             <a href="#contact">Contact</a>
@@ -45,14 +46,14 @@
                 <div class="text">
                     <h3>Hi I'm</h3>
                     <h1>Paavan Randhawa</h1>
-                    <span>Mathematics and Computing Science</span>
+                    <span class="lead">Student at Simon Fraser University</span>
                 </div> 
 
                 <div class="btn-group">
-                    <a href="resume.pdf" download class="btn">
+                    <a href="resume.pdf" download class="click-btn">
                         Download Resume
                     </a>
-                    <a href="#contact" class="btn">Contact</a>
+                    <a href="#contact" class="click-btn">Contact</a>
                 </div>
 
                 <div class="socials">
@@ -74,104 +75,151 @@
     </section>
 
     <section id="experience" class="experience">
-        <h2 class="section-title">Experience</h2>
-        <div class="experience-info">
-            <div class="grid">
+        <h2 class="section-title">Projects</h2>
 
-                <div class="grid-card">
-                    <span>Frontend Development</span>
-                    <h3>5years</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                      in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        <div id="projects-carousel" class="carousel carousel-dark slide "
+        data-bs-ride="carousel"
+     data-bs-interval="3000">
+            <div class="carousel-indicators">
+    <button type="button" data-bs-target="#projects-carousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#projects-carousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#projects-carousel" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#projects-carousel" data-bs-slide-to="3"></button>
+</div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="project1-card">
+
+                         <div class="grid-card">
+                    <span>Rubiks Cube Solver</span>
+                    <a class="click-btn" target="_blank" href="https://github.com/paavanr19/rubikscubesolver"
+                    style="margin-top: 10px; margin-bottom: 10px;">Link to project</a>
+                    <p>A Rubik’s Cube solving program that takes 
+                        a cube configuration as input and uses 
+                        the two-phase Kociemba algorithm to
+                         calculate an efficient solution. It
+                          parses cube states from files, 
+                          processes the cube configuration,
+                          and generates step-by-step instructions 
+                          for solving the cube.
                     </p>
                 </div>
 
-                <div class="grid-card">
-                    <span>Frontend Development</span>
-                    <h3>5years</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                      in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </p>
+                    </div>
                 </div>
 
-                <div class="grid-card">
-                    <span>Frontend Development</span>
-                    <h3>5years</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                      in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                <div class="carousel-item">
+                    <div class="project2-card">
+
+                         <div class="grid-card">
+                    <span>Pocoloco</span>
+                    <a class="click-btn" target="_blank" href="https://github.com/paavanr19/pocoloco"
+                    style="margin-top: 10px; margin-bottom: 10px;">Link to project</a>
+                    <p>A multiplayer dice game where players compete to be 
+                        the first to lose all of their chips. The game 
+                        features randomized turn order, custom scoring mechanics,
+                         and special dice combinations such as Poco, Loco, and 
+                         three-of-a-kind rolls. It processes each player's dice
+                          rolls, applies the corresponding scoring rules, and updates 
+                          chip counts throughout each round.
+
                     </p>
                 </div>
+</div>
+</div>
 
-                <div class="grid-card">
-                    <span>Frontend Development</span>
-                    <h3>5years</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                      in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                   <div class="carousel-item">
+                    <div class="project3-card">
+
+                         <div class="grid-card">
+                    <span>Mythos Seafarer</span>
+                    <a class="click-btn" target="_blank" href="https://github.sfu.ca/saba/CMPT276S26_Group7"
+                    style="margin-top: 10px; margin-bottom: 10px;">Link to project</a>
+                    <p>A Java-based arcade-style game built using Processing.
+                         Players navigate through multiple levels, avoid enemies,
+                          collect rewards, and progress through different maps. 
+                          The game features interactive gameplay, level progression, 
+                          and increasing challenges as players advance.
+
                     </p>
                 </div>
             </div>
-
-            <img src="placeholder.png" alt="pic of smth">
         </div>
+
+            <div class="carousel-item">
+                    <div class="project4-card">
+
+                         <div class="grid-card">
+                    <span>Unix Shell</span>
+                    <a class="click-btn" target="_blank" href="https://github.com/SFU-CMPT-201/a8-paavanr13"
+                    style="margin-top: 10px; margin-bottom: 10px;" disabled>Link to project</a>
+                    <p>Developed a Unix-style command-line shell in C with
+                         support for process creation and execution, foreground and
+                          background processes, built-in commands, signal handling,
+                           and command history. Implemented process management using fork(),
+                            exec(), and waitpid(), with Linux system calls and CMake for
+                             project configuration and builds.
+
+
+
+                    </p>
+                </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#projects-carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#projects-carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+        </div>
+
+
+
+
     </section>
     
     <section class="projects" id="projects">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title">Education</h2>
         <div class="projects-grid">
 
             <div class="projects-card">
-                <img src="placeholder.png" alt="insert text here">
-                <h3>Project A</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                      in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-                <div class="btn-group">
-                    <div class="btn">Link to project</div>
-                </div>
+                <h3>Courses</h3>
+                <p>CMPT 120/125 - Intro to Computer Science and Programming I & II</p>
+                <p>MATH 150/152/251 - Calculus I-III</p>
+                <p>MATH 232 - Applied Linear Algebra</p>
+                <p>MACM 201 - Discrete Mathematics I</p>
+                <p>CMPT 225 - Data Structures and Programming</p>
+                <p>STAT 270 - Introduction to Probability and Statistics</p>
+                <p>CMPT 276 - Introduction to Software Engineering</p>
+                <p>CMPT 201 - Systems Programming</p>
+                <p>CMPT 295 - Intro to Computer Systems</p>
             </div>
 
             <div class="projects-card">
-                <img src="placeholder.png" alt="insert text here">
-                <h3>Project B</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                      in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-                <div class="btn-group">
-                    <div class="btn">Link to project</div>
-                </div>
+                <h3>Skills</h3>
+                
+                <h6>Programming Languages</h6>
+                <p>Java · C · C++ · Python · JavaScript · SQL · Bash / Shell scripting</p>
+                
+                <h6>Web Development</h6>
+                <p>HTML · CSS · Bootstrap</p>
+
+                <h6>Systems & Tools</h6>
+                <p>Unix · Linux · CMake · Maven · MATLAB</p>
+
+                <h6>Testing & Documentation</h6>
+                <p>JUnit · JaCoCo · Javadoc</p>
             </div>
 
-            <div class="projects-card">
-                <img src="placeholder.png" alt="insert text here">
-                <h3>Project C</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                      in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-                <div class="btn-group">
-                    <div class="btn">Link to project</div>
-                </div>
-            </div>
+           
 
         </div>
     </section>
@@ -181,26 +229,33 @@
 
         <h2 class="section-title">Contact Me</h2>
 
-        <form action="https://api.web3forms.com/submit" method="POST">
+        <form action="https://api.web3forms.com/submit" method="POST"
+        class="needs-validation" novalidate>
 
             <input type="hidden" name="access_key" value="1725c347-0370-4255-8441-e8334e976b59">
 
             <div class="input">
-                <input class="input-field"
+                <input 
                     type="text" 
                     name="name" 
                     placeholder="Your Name" 
                     required
                 >
+                <div class="invalid-feedback">
+        Please enter your name.
+    </div>
             </div>
 
             <div class="input">
                 <input 
-                    class="input-field"
+                    
                     type="email" 
                     name="email" 
-                    placeholder="Your Email" 
+                    placeholder="example@email.com" 
                     required>
+                    <div class="invalid-feedback">
+        Please enter a valid email address.
+    </div>
                 
             </div>
 
@@ -211,9 +266,12 @@
                     placeholder="Your Message" 
                     required
                 ></textarea>
+                <div class="invalid-feedback">
+        Please enter a message.
+    </div>
             </div>
 
-            <button type="submit" class="btn">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
 
         </form>
 
@@ -223,10 +281,10 @@
 <footer>
     <ul>
         <li>
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">About  </a>
+            <a href="#projects">Projects  </a>
+            <a href="#education">Education  </a>
+            <a href="#contact">Contact  </a>
         </li>
     </ul>
 
@@ -236,6 +294,6 @@
 
 
     <script src="script.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

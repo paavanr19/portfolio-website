@@ -18,13 +18,17 @@ header {
     display:flex;
     align-items: center;
     justify-content:center;
-    gap:5rem;
+    gap:3rem;
     background-color:rgba(0, 0, 0, 0.8);
     backdrop-filter:blur(8px);
     color:white;
     padding:0.5rem 1.5rem;
     border-radius:3rem;
     z-index:1000;
+}
+
+header a {
+    text-decoration: none;
 }
 
 .logo {
@@ -40,14 +44,26 @@ header {
 }
 
 .nav-links {
-    display:flex;
-    gap:2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    line-height: 1;
 }
 
 li a {
     position: relative;
     color:white;
     font-weight:300;
+    text-decoration:none;
 }
 
 li a::before {
@@ -59,7 +75,7 @@ li a::before {
     top:25px;
     border-radius: 1rem;
     transition: 0.3s ease-in-out;
-    background:linear-gradient(to right, rgb(0,157,255), rgb(255,0,255));
+    background:#4e6d66;
 }
 
 li a:hover::before {
@@ -77,6 +93,7 @@ li a:hover::before {
     text-wrap: nowrap;
     transition: 0.3s ease-in-out;
     background:white;
+    text-decoration:none;
 }
 
 .visit-btn:hover {
@@ -147,18 +164,26 @@ section {
     gap:1rem;
 }
 
-.btn{
+.click-btn{
     border-radius:3rem;
     padding:0.5rem 1.5rem;
     border: 2px solid black;
     cursor:pointer;
     font-weight:500;
     text-wrap:nowrap;
+    text-decoration:none;
+    color:black;
 }
 
-.btn:hover{
+.click-btn:hover{
     background-color:#4e6d66;
     color:white;
+    transform: scale(1.03);
+}
+
+.socials a {
+    color:inherit;
+    text-decoration:none;
 }
 
 socials {
@@ -187,7 +212,7 @@ socials {
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:5rem;
+    gap:3rem;
     
 }
 
@@ -204,32 +229,48 @@ socials {
 .grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
+    justify-content:center;
     gap:2rem;
+
 }
+
 
 .grid-card {
     border: 2px solid #18392B;
-    border-radius: 3rem;
     padding: 2rem;
+    min-height: 250px;
+    width: 100%;
+    max-width: 450px;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    background-color:#F2EFE7;
+    background-color: #F2EFE7;
 }
  
-.grid-card:hover{
-    transform:scale(1.02);
-    background-color:#18392B;
-    color:white;
+#projects-carousel .grid-card {
+    max-width: 600px;
+    margin: 0 auto;
 }
+
+#projects-carousel .carousel-control-prev {
+    left: 0;
+}
+
+#projects-carousel .carousel-control-next {
+    right: 0;
+}
+
 
 .grid-card i{
     font-size:1.5rem;
     margin-bottom:1rem;
     padding: 2rem;
+    text-align: justify;
 }
 
 .grid-card span{
@@ -261,12 +302,10 @@ socials {
 }
 
 .projects-card{
-    padding: 3rem 2rem;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:1.5rem;
     border: 2px solid black;
     border-radius:3rem;
     cursor:pointer;
@@ -299,6 +338,9 @@ socials {
 .projects-card h3{
     font-size:2rem;
     font-weight:500;
+    margin-top:10px;
+    margin-bottom:10px;
+
 }
 
 .input-box {
@@ -311,20 +353,22 @@ socials {
     margin-top:5rem;
 }
 
-.input-box input {
-    position:relative;
-    border-radius:3rem;
-    border:2px solid black;
-    padding: 2rem 8rem;
-    font-size:3rem;
-}
+
 
 .input-box input::placeholder {
-    font-size:3rem;
+    font-size:1rem;
 }
 
 .input {
     position:relative;
+}
+
+.input-box input {
+    position:relative;
+    border:2px solid black;
+    font-size: 1rem;
+    padding: 5px;
+    width: 50%;
 }
 
 .input i{
@@ -382,11 +426,9 @@ footer ul li a{
     height: 100px;
     padding: 10px 12px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    font-family: inherit;
     box-sizing: border-box;
     resize: none;
+    border:2px solid black;
     outline: none;
 }
 
@@ -397,10 +439,16 @@ footer ul li a{
 a {
     color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
 .contact {
     background-color: #85aa9b;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    color:black;
 }
 
 
