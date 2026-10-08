@@ -3,297 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Paavan Randhawa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;1,6..96,400&family=Didact+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header class="header">
-        <a href="#" class="logo"><span>Paavan Randhawa</span></a>
+        <a href="#about" class="logo">Paavan Randhawa</a>
 
         <ul class="nav-links">
-        <li>
-            <a href="#about">About</a>
-        </li>
-        <li>
-            <a href="#projects">Projects</a>
-        </li>
-        <li>
-            <a href="#education">Education</a>
-        </li>
-        <li>
-            <a href="#contact">Contact</a>
-        </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <button type="button" class="menu-toggle" id="menu-icon" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
-               <a href="https://github.com/paavanr19" target="_blank" class="visit-btn">
-                Visit Github
-                </a>
-
+        <a href="https://github.com/paavanr19" target="_blank" rel="noopener noreferrer" class="visit-btn">
+            Visit GitHub
+        </a>
     </header>
 
     <section id="about" class="about">
         <div class="about-container">
-            <img src="pfp.png" alt="Picture of Paavan Randhawa">
-
             <div class="info-box">
-
-
-                <div class="text">
-                    <h3>Hi I'm</h3>
-                    <h1>Paavan Randhawa</h1>
-                    <span class="lead">Student at Simon Fraser University</span>
-                </div> 
-
+                <p class="hello">hi i'm</p>
+                <h1>Paavan!</h1>
+                <p class="lead">Student at Simon Fraser University</p>
+                <p class="bio">
+                    I'm a computing science student in Vancouver, focused on building
+                    software that is useful and carefully made — from games and solvers
+                    to systems programming.
+                </p>
                 <div class="btn-group">
-                    <a href="PaavanRandhawa-Resume.pdf" download class="click-btn">
-                        Download Resume
-                    </a>
-                    <a href="#contact" class="click-btn">Contact</a>
+                    <a href="PaavanRandhawa-Resume.pdf" download class="btn btn-filled">Download Resume</a>
+                    <a href="#contact" class="btn btn-outline">Contact</a>
                 </div>
-
                 <div class="socials">
-                    <a target="_blank" href="https://github.com/paavanr19">
-                    <i class="fa-brands fa-github"></i>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/paavanr19" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
                     </a>
-                    
-                    <a target="_blank" href="https://www.linkedin.com/in/paavan-randhawa-229738292">
-                    <i class="fa-brands fa-square-linkedin"></i>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/paavan-randhawa-229738292" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
                     </a>
-
-
-                    
                 </div>
+            </div>
 
-
+            <div class="about-photo">
+                <img src="pfp.png" alt="Paavan Randhawa">
+                <span class="photo-pill" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </span>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="experience">
+    <section id="projects" class="projects">
         <h2 class="section-title">Projects</h2>
 
-        <div id="projects-carousel" class="carousel carousel-dark slide "
-        data-bs-ride="carousel"
-     data-bs-interval="3000">
-            <div class="carousel-indicators">
-    <button type="button" data-bs-target="#projects-carousel" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#projects-carousel" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#projects-carousel" data-bs-slide-to="2"></button>
-    <button type="button" data-bs-target="#projects-carousel" data-bs-slide-to="3"></button>
-</div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="project1-card">
+        <div class="carousel" data-carousel>
+            <button type="button" class="carousel-btn prev" data-carousel-prev aria-label="Previous project">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
 
-                         <div class="grid-card">
-                    <span>Rubiks Cube Solver</span>
-                    <a class="click-btn" target="_blank" href="https://github.com/paavanr19/rubikscubesolver"
-                    style="margin-top: 10px; margin-bottom: 10px;">Link to project</a>
-                    <p>A Rubik’s Cube solving program that takes 
-                        a cube configuration as input and uses 
-                        the two-phase Kociemba algorithm to
-                         calculate an efficient solution. It
-                          parses cube states from files, 
-                          processes the cube configuration,
-                          and generates step-by-step instructions 
-                          for solving the cube.
-                    </p>
-                </div>
-
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="project2-card">
-
-                         <div class="grid-card">
-                    <span>Pocoloco</span>
-                    <a class="click-btn" target="_blank" href="https://github.com/paavanr19/pocoloco"
-                    style="margin-top: 10px; margin-bottom: 10px;">Link to project</a>
-                    <p>A multiplayer dice game where players compete to be 
-                        the first to lose all of their chips. The game 
-                        features randomized turn order, custom scoring mechanics,
-                         and special dice combinations such as Poco, Loco, and 
-                         three-of-a-kind rolls. It processes each player's dice
-                          rolls, applies the corresponding scoring rules, and updates 
-                          chip counts throughout each round.
-
-                    </p>
-                </div>
-</div>
-</div>
-
-                   <div class="carousel-item">
-                    <div class="project3-card">
-
-                         <div class="grid-card">
-                    <span>Mythos Seafarer</span>
-                    <a class="click-btn" target="_blank" href="https://github.sfu.ca/saba/CMPT276S26_Group7"
-                    style="margin-top: 10px; margin-bottom: 10px;">Link to project</a>
-                    <p>A Java-based arcade-style game built using Processing.
-                         Players navigate through multiple levels, avoid enemies,
-                          collect rewards, and progress through different maps. 
-                          The game features interactive gameplay, level progression, 
-                          and increasing challenges as players advance.
-
-                    </p>
-                </div>
-            </div>
-        </div>
-
-            <div class="carousel-item">
-                    <div class="project4-card">
-
-                         <div class="grid-card">
-                    <span>Unix Shell</span>
-                    <a class="click-btn" target="_blank" href="https://github.com/SFU-CMPT-201/a8-paavanr13"
-                    style="margin-top: 10px; margin-bottom: 10px;" disabled>Link to project</a>
-                    <p>Developed a Unix-style command-line shell in C with
-                         support for process creation and execution, foreground and
-                          background processes, built-in commands, signal handling,
-                           and command history. Implemented process management using fork(),
-                            exec(), and waitpid(), with Linux system calls and CMake for
-                             project configuration and builds.
-
-
-
-                    </p>
-                </div>
-
-
-
-                    </div>
-                </div>
+            <div class="carousel-viewport">
+                <ul class="carousel-track">
+                    <li class="carousel-slide is-active">
+                        <article class="project-card">
+                            <h3>Rubik's Cube Solver</h3>
+                            <a class="btn btn-outline" target="_blank" rel="noopener noreferrer" href="https://github.com/paavanr19/rubikscubesolver">View project</a>
+                            <p>A Rubik’s Cube solving program that takes a cube configuration as input and uses the two-phase Kociemba algorithm to calculate an efficient solution. It parses cube states from files, processes the cube configuration, and generates step-by-step instructions for solving the cube.</p>
+                        </article>
+                    </li>
+                    <li class="carousel-slide">
+                        <article class="project-card">
+                            <h3>Pocoloco</h3>
+                            <a class="btn btn-outline" target="_blank" rel="noopener noreferrer" href="https://github.com/paavanr19/pocoloco">View project</a>
+                            <p>A multiplayer dice game where players compete to be the first to lose all of their chips. The game features randomized turn order, custom scoring mechanics, and special dice combinations such as Poco, Loco, and three-of-a-kind rolls. It processes each player's dice rolls, applies the corresponding scoring rules, and updates chip counts throughout each round.</p>
+                        </article>
+                    </li>
+                    <li class="carousel-slide">
+                        <article class="project-card">
+                            <h3>Mythos Seafarer</h3>
+                            <a class="btn btn-outline" target="_blank" rel="noopener noreferrer" href="https://github.sfu.ca/saba/CMPT276S26_Group7">View project</a>
+                            <p>A Java-based arcade-style game built using Processing. Players navigate through multiple levels, avoid enemies, collect rewards, and progress through different maps. The game features interactive gameplay, level progression, and increasing challenges as players advance.</p>
+                        </article>
+                    </li>
+                    <li class="carousel-slide">
+                        <article class="project-card">
+                            <h3>Unix Shell</h3>
+                            <a class="btn btn-outline" target="_blank" rel="noopener noreferrer" href="https://github.com/SFU-CMPT-201/a8-paavanr13">View project</a>
+                            <p>A Unix-style command-line shell in C with support for process creation and execution, foreground and background processes, built-in commands, signal handling, and command history. Process management uses fork(), exec(), and waitpid(), with Linux system calls and CMake for configuration and builds.</p>
+                        </article>
+                    </li>
+                </ul>
             </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#projects-carousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#projects-carousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+            <button type="button" class="carousel-btn next" data-carousel-next aria-label="Next project">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="carousel-dots" data-carousel-dots></div>
         </div>
-
-
-
-
     </section>
-    
-    <section class="projects" id="education">
+
+    <section id="education" class="education">
         <h2 class="section-title">Education</h2>
-        <div class="projects-grid">
-
-            <div class="projects-card">
+        <div class="edu-grid">
+            <div class="edu-card">
                 <h3>Courses</h3>
-                <p>CMPT 120/125 - Intro to Computer Science and Programming I & II</p>
-                <p>MATH 150/152/251 - Calculus I-III</p>
-                <p>MATH 232 - Applied Linear Algebra</p>
-                <p>MACM 201 - Discrete Mathematics I</p>
-                <p>CMPT 225 - Data Structures and Programming</p>
-                <p>STAT 270 - Introduction to Probability and Statistics</p>
-                <p>CMPT 276 - Introduction to Software Engineering</p>
-                <p>CMPT 201 - Systems Programming</p>
-                <p>CMPT 295 - Intro to Computer Systems</p>
+                <ul>
+                    <li>CMPT 120/125 — Intro to Computer Science and Programming I &amp; II</li>
+                    <li>MATH 150/152/251 — Calculus I–III</li>
+                    <li>MATH 232 — Applied Linear Algebra</li>
+                    <li>MACM 201 — Discrete Mathematics I</li>
+                    <li>CMPT 225 — Data Structures and Programming</li>
+                    <li>STAT 270 — Introduction to Probability and Statistics</li>
+                    <li>CMPT 276 — Introduction to Software Engineering</li>
+                    <li>CMPT 201 — Systems Programming</li>
+                    <li>CMPT 295 — Intro to Computer Systems</li>
+                </ul>
             </div>
-
-            <div class="projects-card">
+            <div class="edu-card">
                 <h3>Skills</h3>
-                
-                <h6>Programming Languages</h6>
+                <h4>Programming Languages</h4>
                 <p>Java · C · C++ · Python · JavaScript · SQL · Bash / Shell scripting</p>
-                
-                <h6>Web Development</h6>
-                <p>HTML · CSS · Bootstrap · Tailwind CSS</p>
-
-                <h6>Systems & Tools</h6>
+                <h4>Web Development</h4>
+                <p>HTML · CSS · JavaScript · Tailwind CSS</p>
+                <h4>Systems &amp; Tools</h4>
                 <p>Unix · Linux · CMake · Maven · MATLAB</p>
-
-                <h6>Testing & Documentation</h6>
+                <h4>Testing &amp; Documentation</h4>
                 <p>JUnit · JaCoCo · Javadoc</p>
             </div>
-
-           
-
         </div>
     </section>
 
-    <section class="contact" id="contact">
-    <div class="input-box">
+    <section id="interests" class="interests">
+        <div class="interests-layout">
+            <div class="interests-copy">
+                <h2 class="section-title section-title-left">Interests</h2>
+                <p>
+                    Outside of class I like working on small creative projects, playing and designing games,
+                    and spending time outdoors. This space will hold a fuller note on what I care about,
+                    along with photos from those parts of my life.
+                </p>
+                <p class="placeholder-note">Photos and copy coming soon — drop in files named below to replace these tiles.</p>
+            </div>
+            <div class="interests-photos">
+                <img src="placeholder.png" alt="Interest photo placeholder 1">
+                <img src="placeholder.png" alt="Interest photo placeholder 2">
+                <img src="placeholder.png" alt="Interest photo placeholder 3">
+            </div>
+        </div>
+    </section>
 
-        <h2 class="section-title">Contact Me</h2>
-
-        <form action="https://api.web3forms.com/submit" method="POST"
-        class="needs-validation" novalidate>
-
-            <input type="hidden" name="access_key" value="1725c347-0370-4255-8441-e8334e976b59">
-
-            <div class="input">
-                <input 
-                    type="text" 
-                    name="name" 
-                    placeholder="Your Name" 
-                    required
-                >
-                <div class="invalid-feedback">
-        Please enter your name.
-    </div>
+    <section id="contact" class="contact">
+        <div class="contact-card">
+            <div class="contact-copy">
+                <h2>Contact Me</h2>
+                <p>
+                    Have a question, a project idea, or just want to say hello?
+                    Send a note and I’ll get back to you.
+                </p>
+                <a href="PaavanRandhawa-Resume.pdf" download class="btn btn-outline">Download Resume</a>
+                <div class="contact-meta">
+                    <p>
+                        GitHub<br>
+                        <a href="https://github.com/paavanr19" target="_blank" rel="noopener noreferrer">github.com/paavanr19</a>
+                    </p>
+                    <p>
+                        LinkedIn<br>
+                        <a href="https://www.linkedin.com/in/paavan-randhawa-229738292" target="_blank" rel="noopener noreferrer">Paavan Randhawa</a>
+                    </p>
+                </div>
             </div>
 
-            <div class="input">
-                <input 
-                    
-                    type="email" 
-                    name="email" 
-                    placeholder="example@email.com" 
-                    required>
-                    <div class="invalid-feedback">
-        Please enter a valid email address.
-    </div>
-                
-            </div>
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" novalidate>
+                <input type="hidden" name="access_key" value="1725c347-0370-4255-8441-e8334e976b59">
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
-            <div class="input">
-                <textarea 
-                class="input-field-msg"
-                    name="message" 
-                    placeholder="Your Message" 
-                    required
-                ></textarea>
-                <div class="invalid-feedback">
-        Please enter a message.
-    </div>
-            </div>
+                <label>
+                    <span class="sr-only">Your name</span>
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <small class="error">Please enter your name.</small>
+                </label>
 
-            <button type="submit" class="click-btn">Submit</button>
+                <label>
+                    <span class="sr-only">Your email</span>
+                    <input type="email" name="email" placeholder="Your email" required>
+                    <small class="error">Please enter a valid email address.</small>
+                </label>
 
-        </form>
+                <label>
+                    <span class="sr-only">Your message</span>
+                    <textarea name="message" rows="4" placeholder="Your message" required></textarea>
+                    <small class="error">Please enter a message.</small>
+                </label>
 
-    </div>
-</section>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </section>
 
-<footer>
-    <ul>
-        <li>
-            <a href="#about">About  </a>
-            <a href="#projects">Projects  </a>
-            <a href="#education">Education  </a>
-            <a href="#contact">Contact  </a>
-        </li>
-    </ul>
-
-    <p class="copyright">© All Rights Reserved | Paavan Randhawa</p>
-</footer>
-
-
+    <footer>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="copyright">© All Rights Reserved | Paavan Randhawa</p>
+    </footer>
 
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
