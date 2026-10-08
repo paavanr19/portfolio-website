@@ -1,17 +1,18 @@
 # Portfolio Website
 
-My personal portfolio website, built with HTML, CSS, JavaScript, and Bootstrap. It introduces me, showcases my projects, lists my coursework and skills, and lets visitors download my resume or send me a message.
+My personal portfolio website, built with HTML, CSS, and JavaScript. It introduces me, showcases my projects, lists my coursework and skills, shares a few interests, and lets visitors download my resume or send me a message.
 
-**Live site:** [paavanr19.github.io/portfolio-website](https://paavanr19.github.io/portfolio-website/)
+**Live site:** [portfolio-website-paavanr19.vercel.app](https://portfolio-website-paavanr19.vercel.app)
 
 ---
 
 ## Features
 
 - **Responsive design** that adapts to desktop, tablet, and mobile, with a hamburger menu on small screens
-- **Project carousel** that rotates through my projects automatically, with links to each GitHub repository
+- **Project carousel** with smooth sliding, dots, and swipe
 - **Resume download** button
-- **Education section** with my relevant courses and technical skills
+- **Education section** with relevant courses and technical skills
+- **Interests section** with placeholder copy and photos (swap the images when ready)
 - **Contact form** with client-side validation, sent through [Web3Forms](https://web3forms.com/) so no backend is needed
 - Links to my **GitHub** and **LinkedIn**
 
@@ -23,8 +24,7 @@ My personal portfolio website, built with HTML, CSS, JavaScript, and Bootstrap. 
 |---|---|
 | HTML5 | Page structure and content |
 | CSS3 | Custom styling, colour scheme, and responsive layout |
-| JavaScript | Mobile menu toggle and form validation |
-| [Bootstrap 5](https://getbootstrap.com/) | Project carousel and form validation styles |
+| JavaScript | Mobile menu, carousel, and form validation |
 | [Font Awesome](https://fontawesome.com/) | Menu and social media icons |
 | [Web3Forms](https://web3forms.com/) | Contact form submissions |
 
@@ -37,6 +37,7 @@ My personal portfolio website, built with HTML, CSS, JavaScript, and Bootstrap. 
 | **About** | Introduction, photo, resume download, and social links |
 | **Projects** | Rubik's Cube Solver, Pocoloco, Mythos Seafarer, and Unix Shell |
 | **Education** | Relevant SFU courses and technical skills |
+| **Interests** | Placeholder paragraph and photos |
 | **Contact** | Message form |
 
 ---
@@ -47,9 +48,9 @@ My personal portfolio website, built with HTML, CSS, JavaScript, and Bootstrap. 
 portfolio-website/
 ├── index.html                 # Page content and layout
 ├── style.css                  # Styling and responsive design
-├── script.js                  # Mobile menu and form validation
+├── script.js                  # Mobile menu, carousel, and form validation
 ├── pfp.png                    # Profile picture
-├── placeholder.png            # Placeholder image
+├── placeholder.png            # Placeholder image for Interests
 └── PaavanRandhawa-Resume.pdf  # Downloadable resume
 ```
 
