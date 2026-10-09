@@ -88,13 +88,3 @@ function setupCarousel(root) {
 
 document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
 
-// Keep the destination in one place so the intro can be reused without touching its markup.
-const NEW_PORTFOLIO_URL = 'https://paavan-randhawa.vercel.app';
-const ozIntro = document.querySelector('#oz-intro');
-
-if (ozIntro) {
-    const ozLink = ozIntro.querySelector('.oz-link');
-    ozLink?.addEventListener('click', () => {
-        ozIntro.classList.add('is-revealing');
-    });
-}
