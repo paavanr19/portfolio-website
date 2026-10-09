@@ -655,15 +655,22 @@ section {
     transition: opacity 0.55s ease, visibility 0.55s ease;
 }
 
-.oz-message {
-    color: #252525;
-    font-family: var(--body);
-    font-size: clamp(1rem, 2vw, 1.35rem);
-    letter-spacing: 0.02em;
-    text-align: center;
-}
+  .oz-message {
+  color: #252525;
+  font-family: var(--body);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  letter-spacing: 0.02em;
+  text-align: center;
+  }
 
-.ruby-slippers-pair {
+  .oz-instruction {
+  color: #666;
+  font-family: var(--body);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  text-align: center;
+  }
+  
+  .ruby-slippers-pair {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -701,17 +708,29 @@ section {
     transform: scale(0.94) rotate(-2deg);
 }
 
-.ruby-slippers img {
-    width: 100%;
-    image-rendering: pixelated;
-}
+  .ruby-slippers img {
+  width: 100%;
+  image-rendering: pixelated;
+  }
 
-@keyframes slipper-appear {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-}
+  .ruby-slippers:first-child img {
+  transform: scaleX(-1);
+  }
 
-@media (prefers-reduced-motion: reduce) {
+  .ruby-slippers.is-tapping {
+  animation: heel-tap 0.22s ease;
+  }
+  
+  @keyframes slipper-appear {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes heel-tap {
+  50% { transform: scale(0.94) translateY(0.25rem); }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
     .ruby-slippers { animation: none; opacity: 1; }
     .oz-intro { transition: none; }
 }

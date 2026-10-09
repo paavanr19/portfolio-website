@@ -127,6 +127,11 @@ if (ozIntro && rubySlippers.length === 2 && ozCounter && ozSkip) {
             if (redirecting || clicks >= 3) return;
             clicks += 1;
             playHeelClick();
+            rubySlippers.forEach((shoe) => {
+                shoe.classList.remove('is-tapping');
+                void shoe.offsetWidth;
+                shoe.classList.add('is-tapping');
+            });
             ozCounter.textContent = `${clicks} of 3 clicks`;
             rubySlippers.forEach((shoe) => {
                 shoe.setAttribute('aria-label', `Ruby slipper, ${clicks} of 3 clicks`);
