@@ -645,10 +645,29 @@ section {
     position: fixed;
     inset: 0;
     z-index: 2000;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
     background: #fff;
     transition: opacity 0.55s ease, visibility 0.55s ease;
+}
+
+.oz-message {
+    color: #252525;
+    font-family: var(--body);
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.ruby-slippers-pair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.75rem, 4vw, 2.5rem);
 }
 
 .oz-intro.is-revealing {

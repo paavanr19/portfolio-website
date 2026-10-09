@@ -91,11 +91,11 @@ document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
 // Keep the destination in one place so the intro can be reused without touching its markup.
 const NEW_PORTFOLIO_URL = 'https://paavan-randhawa.vercel.app';
 const ozIntro = document.querySelector('#oz-intro');
-const rubySlippers = document.querySelector('#ruby-slippers');
+const rubySlippers = [...document.querySelectorAll('.ruby-slippers')];
 const ozCounter = document.querySelector('#oz-counter');
 const ozSkip = document.querySelector('#oz-skip');
 
-if (ozIntro && rubySlippers && ozCounter && ozSkip) {
+if (ozIntro && rubySlippers.length === 2 && ozCounter && ozSkip) {
     let clicks = 0;
     let redirecting = false;
 
@@ -117,17 +117,21 @@ if (ozIntro && rubySlippers && ozCounter && ozSkip) {
     function goToNewPortfolio() {
         if (redirecting) return;
         redirecting = true;
-        rubySlippers.disabled = true;
+        rubySlippers.forEach((slipper) => { slipper.disabled = true; });
         ozIntro.classList.add('is-revealing');
         window.setTimeout(() => { window.location.href = NEW_PORTFOLIO_URL; }, 600);
     }
 
-    rubySlippers.addEventListener('click', () => {
-        if (redirecting || clicks >= 3) return;
-        clicks += 1;
-        playHeelClick();
-        ozCounter.textContent = `${clicks} of 3 clicks`;
-        rubySlippers.setAttribute('aria-label', `Ruby slippers, ${clicks} of 3 clicks`);
-        if (clicks === 3) goToNewPortfolio();
+    rubySlippers.forEach((slipper) => {
+        slipper.addEventListener('click', () => {
+            if (redirecting || clicks >= 3) return;
+            clicks += 1;
+            playHeelClick();
+            ozCounter.textContent = `${clicks} of 3 clicks`;
+            rubySlippers.forEach((shoe) => {
+                shoe.setAttribute('aria-label', `Ruby slipper, ${clicks} of 3 clicks`);
+            });
+            if (clicks === 3) goToNewPortfolio();
+        });
     });
 }
