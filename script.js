@@ -87,3 +87,39 @@ function setupCarousel(root) {
 }
 
 document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
+
+// Keep the destination in one place so the intro can be reused without touching its markup.
+const NEW_PORTFOLIO_URL = 'https://paavan-randhawa.vercel.app';
+const ozIntro = document.querySelector('#oz-intro');
+const rubySlippers = document.querySelector('#ruby-slippers');
+const ozCounter = document.querySelector('#oz-counter');
+const ozSkip = document.querySelector('#oz-skip');
+
+if (ozIntro && rubySlippers && ozCounter && ozSkip) {
+    let clicks = 0;
+    let redirecting = false;
+    ozSkip.href = NEW_PORTFOLIO_URL;
+
+    function goToNewPortfolio() {
+        if (redirecting) return;
+        redirecting = true;
+        rubySlippers.disabled = true;
+        ozIntro.classList.add('is-revealing');
+        window.setTimeout(() => { window.location.href = NEW_PORTFOLIO_URL; }, 1050);
+    }
+
+    rubySlippers.addEventListener('click', () => {
+        if (redirecting || clicks >= 3) return;
+        clicks += 1;
+        ozCounter.textContent = `CLICK ${clicks} / 3`;
+        rubySlippers.setAttribute('aria-label', `Click the ruby slippers, ${clicks} of 3 clicks`);
+        rubySlippers.classList.remove('is-magic-1', 'is-magic-2');
+        if (clicks < 3) rubySlippers.classList.add(`is-magic-${clicks}`);
+        if (clicks === 3) goToNewPortfolio();
+    });
+
+    ozSkip.addEventListener('click', (event) => {
+        if (redirecting) event.preventDefault();
+        else redirecting = true;
+    });
+}
