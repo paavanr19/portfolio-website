@@ -11,18 +11,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="oz-intro" id="oz-intro" aria-labelledby="oz-title" aria-describedby="oz-instructions">
-        <div class="oz-tornado" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-        <div class="oz-card">
-            <p class="oz-kicker">A little bit of magic</p>
-            <h1 id="oz-title">There&apos;s no place like my new portfolio.</h1>
-            <p id="oz-instructions">Click the ruby slippers three times to discover my new portfolio.</p>
-            <button class="ruby-slippers" id="ruby-slippers" type="button" aria-label="Click the ruby slippers, 0 of 3 clicks">
-                <img src="ruby-slippers.png" alt="Ruby slippers">
-            </button>
-            <p class="oz-counter" id="oz-counter" aria-live="polite">CLICK 0 / 3</p>
-            <a class="oz-skip" id="oz-skip" href="https://paavan-randhawa.vercel.app">Skip intro</a>
-        </div>
+    <div class="oz-intro" id="oz-intro" aria-label="Portfolio introduction">
+        <button class="ruby-slippers" id="ruby-slippers" type="button" aria-label="Ruby slippers, 0 of 3 clicks">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-HrWWs5NbDoMtVXAbtt8dAbJ8fdnqMK.png" alt="Pixelated ruby red high-heeled shoe">
+        </button>
+        <span class="sr-only" id="oz-counter" aria-live="polite">0 of 3 clicks</span>
+        <a class="oz-skip sr-only" id="oz-skip" href="https://paavan-randhawa.vercel.app">Skip intro</a>
     </div>
 
     <header class="header">

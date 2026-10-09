@@ -98,28 +98,36 @@ const ozSkip = document.querySelector('#oz-skip');
 if (ozIntro && rubySlippers && ozCounter && ozSkip) {
     let clicks = 0;
     let redirecting = false;
-    ozSkip.href = NEW_PORTFOLIO_URL;
+
+    function playHeelClick() {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const audio = new AudioContext();
+        const oscillator = audio.createOscillator();
+        const gain = audio.createGain();
+        oscillator.type = 'square';
+        oscillator.frequency.value = 180;
+        gain.gain.setValueAtTime(0.08, audio.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audio.currentTime + 0.08);
+        oscillator.connect(gain).connect(audio.destination);
+        oscillator.start();
+        oscillator.stop(audio.currentTime + 0.08);
+    }
 
     function goToNewPortfolio() {
         if (redirecting) return;
         redirecting = true;
         rubySlippers.disabled = true;
         ozIntro.classList.add('is-revealing');
-        window.setTimeout(() => { window.location.href = NEW_PORTFOLIO_URL; }, 1050);
+        window.setTimeout(() => { window.location.href = NEW_PORTFOLIO_URL; }, 600);
     }
 
     rubySlippers.addEventListener('click', () => {
         if (redirecting || clicks >= 3) return;
         clicks += 1;
-        ozCounter.textContent = `CLICK ${clicks} / 3`;
-        rubySlippers.setAttribute('aria-label', `Click the ruby slippers, ${clicks} of 3 clicks`);
-        rubySlippers.classList.remove('is-magic-1', 'is-magic-2');
-        if (clicks < 3) rubySlippers.classList.add(`is-magic-${clicks}`);
+        playHeelClick();
+        ozCounter.textContent = `${clicks} of 3 clicks`;
+        rubySlippers.setAttribute('aria-label', `Ruby slippers, ${clicks} of 3 clicks`);
         if (clicks === 3) goToNewPortfolio();
-    });
-
-    ozSkip.addEventListener('click', (event) => {
-        if (redirecting) event.preventDefault();
-        else redirecting = true;
     });
 }
