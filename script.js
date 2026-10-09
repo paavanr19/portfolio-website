@@ -91,52 +91,10 @@ document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
 // Keep the destination in one place so the intro can be reused without touching its markup.
 const NEW_PORTFOLIO_URL = 'https://paavan-randhawa.vercel.app';
 const ozIntro = document.querySelector('#oz-intro');
-const rubySlippers = [...document.querySelectorAll('.ruby-slippers')];
-const ozCounter = document.querySelector('#oz-counter');
-const ozSkip = document.querySelector('#oz-skip');
 
-if (ozIntro && rubySlippers.length === 2 && ozCounter && ozSkip) {
-    let clicks = 0;
-    let redirecting = false;
-
-    function playHeelClick() {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        if (!AudioContext) return;
-        const audio = new AudioContext();
-        const oscillator = audio.createOscillator();
-        const gain = audio.createGain();
-        oscillator.type = 'square';
-        oscillator.frequency.value = 180;
-        gain.gain.setValueAtTime(0.08, audio.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audio.currentTime + 0.08);
-        oscillator.connect(gain).connect(audio.destination);
-        oscillator.start();
-        oscillator.stop(audio.currentTime + 0.08);
-    }
-
-    function goToNewPortfolio() {
-        if (redirecting) return;
-        redirecting = true;
-        rubySlippers.forEach((slipper) => { slipper.disabled = true; });
+if (ozIntro) {
+    const ozLink = ozIntro.querySelector('.oz-link');
+    ozLink?.addEventListener('click', () => {
         ozIntro.classList.add('is-revealing');
-        window.setTimeout(() => { window.location.href = NEW_PORTFOLIO_URL; }, 600);
-    }
-
-    rubySlippers.forEach((slipper) => {
-        slipper.addEventListener('click', () => {
-            if (redirecting || clicks >= 3) return;
-            clicks += 1;
-            playHeelClick();
-            rubySlippers.forEach((shoe) => {
-                shoe.classList.remove('is-tapping');
-                void shoe.offsetWidth;
-                shoe.classList.add('is-tapping');
-            });
-            ozCounter.textContent = `${clicks} of 3 clicks`;
-            rubySlippers.forEach((shoe) => {
-                shoe.setAttribute('aria-label', `Ruby slipper, ${clicks} of 3 clicks`);
-            });
-            if (clicks === 3) goToNewPortfolio();
-        });
     });
 }
